@@ -1,10 +1,10 @@
 #include "Robot.h"
 
-Robot::Robot() : name("Vasya 3.0"), jump_height(0.4), running_distance(8545){}
+Robot::Robot() : Participant("Vasya 3.0", 0.4, 8545){}
 
-Robot::Robot(const char* n) : name(n), jump_height(0.4), running_distance(8545) {}
+Robot::Robot(const char* n) : Participant(n, 0.4, 8545) {}
 
-Robot::Robot(const char* n, double j, double r) : name(n), jump_height(j), running_distance(r) {}
+Robot::Robot(const char* n, double j, double r) : Participant(n,j,r) {}
 
 void Robot::Run() const
 {
@@ -16,17 +16,3 @@ void Robot::Jump() const
 	cout << "Robot " << name << " is jumping" << endl;
 }
 
-string Robot::GetName() const
-{
-	return name;
-}
-
-double Robot::GetJumpHeight() const
-{
-	return jump_height;
-}
-
-double Robot::GetRunDistance() const
-{
-	return running_distance;
-}
